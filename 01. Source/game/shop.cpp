@@ -17,7 +17,7 @@ void CShop::SetPCShop(LPCHARACTER ch)
 //2.2) Add after:
 //c++98
 #ifdef ENABLE_PRIVATE_SHOP_AUTO_CLOSE
-bool CShop::IsSoldOut()
+bool CShop::IsSoldOut() const
 {
 	for (size_t i = 0; i < m_itemVector.size() && i < SHOP_HOST_ITEM_MAX_NUM; ++i)
 	{
@@ -31,9 +31,9 @@ bool CShop::IsSoldOut()
 
 //c++11
 #ifdef ENABLE_SHOP_AUTO_CLOSE
-bool CShop::IsSoldOut()
+bool CShop::IsSoldOut() const
 {
-	for (auto & r_item : m_itemVector)
+	for (const auto & r_item : m_itemVector)
 	{
 		if (r_item.pkItem)
 			return false;

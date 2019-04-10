@@ -30,7 +30,7 @@ bool CShop::IsSoldOut() const
 #endif
 
 //c++11
-#ifdef ENABLE_SHOP_AUTO_CLOSE
+#ifdef ENABLE_PRIVATE_SHOP_AUTO_CLOSE
 bool CShop::IsSoldOut() const
 {
 	for (const auto & r_item : m_itemVector)
